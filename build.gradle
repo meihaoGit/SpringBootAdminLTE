@@ -11,7 +11,6 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
 
 jar {
@@ -27,9 +26,12 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
-	compile("org.springframework.boot:spring-boot-starter-web")
-	compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1")
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1')
+	compile('org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16')
+	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('ch.qos.logback:logback-classic:1.1.7')
 	runtime('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
