@@ -3,3 +3,5 @@ spring:
     url: jdbc:postgresql://133.227.185.196:5432/dog_admin
     username: postgres
     password: postgres
+    driverClassName: org.postgresql.Driver
+    
