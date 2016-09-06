@@ -16,6 +16,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="jp.baseManagement.domain.mapper.UserMapper">
     <select id="selectUserById" resultType="User">
-        select * from TB_DM_M_USER_MNG where USER_ID = #{userId}
+        SELECT *
+        FROM "TB_DM_M_USER_MNG"
+        WHERE "USER_ID" = #{userId}
     </select>
 </mapper>
