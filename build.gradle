@@ -1,38 +1,40 @@
 buildscript {
-	ext {
-		springBootVersion = '1.4.0.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.4.0.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
 apply plugin: 'spring-boot'
 
 jar {
-	baseName = 'baseManagement'
-	version = '0.0.1-SNAPSHOT'
+    baseName = 'baseManagement'
+    version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1')
-	compile('org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16')
-	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('ch.qos.logback:logback-classic:1.1.7')
-	compile('org.projectlombok:lombok:1.16.10')
-	runtime('org.postgresql:postgresql')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1')
+    compile('org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16')
+    compile('org.slf4j:slf4j-api:1.7.21')
+    compile('net.sourceforge.nekohtml:nekohtml:1.9.22')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('ch.qos.logback:logback-classic:1.1.7')
+    compile('org.projectlombok:lombok:1.16.10')
+    runtime('org.postgresql:postgresql')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }

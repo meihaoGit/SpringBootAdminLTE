@@ -7,7 +7,9 @@ package jp.baseManagement.model.logic.top;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -16,8 +18,13 @@ public class MenuLogic {
 
     @RequestMapping("/")
     @ResponseBody
-    public String MenuLogic() {
+    public String TopLogic() {
         return "Hello, Spring Boot Sample Application!";
     }
 
+    @RequestMapping(value="/test" , method = RequestMethod.GET)
+    public String testLogic(Model model) {
+        model.addAttribute("msg", "サンプルメッセージ！");
+        return "test/test";
+    }
 }
