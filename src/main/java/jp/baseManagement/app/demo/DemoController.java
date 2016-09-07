@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller
-@RequestMapping("/testT")
+@RequestMapping("/demo")
 @EnableAutoConfiguration
-public class TestController {
+public class DemoController {
     @RequestMapping(method = RequestMethod.GET)
     public String test(Model model) {
         model.addAttribute("msg", "サンプルメッセージ！");
-        return "test";
+        return "demo/login";
     }
 }
